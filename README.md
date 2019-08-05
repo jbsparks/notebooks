@@ -11,3 +11,36 @@ $ helm template --set proxy.secretToken="b326bae33a6793ab57c5ca3677c540c4d53a4be
 $ cd ..
 $ kubectl apply --recursive --filename ~/manifests/jupyterhub
 ```
+
+Applying the changes on noname-sms
+
+```bash
+sms01-nmn:~/jsparks/manifests # kubectl apply --recursive --filename ${PWD}/jupyterhub
+configmap/hub-config created
+deployment.apps/hub created
+poddisruptionbudget.policy/hub created
+persistentvolumeclaim/hub-db-dir created
+serviceaccount/hub created
+role.rbac.authorization.k8s.io/hub created
+rolebinding.rbac.authorization.k8s.io/hub created
+secret/hub-secret created
+service/hub created
+daemonset.apps/hook-image-puller created
+job.batch/hook-image-awaiter created
+serviceaccount/hook-image-awaiter created
+role.rbac.authorization.k8s.io/hook-image-awaiter created
+rolebinding.rbac.authorization.k8s.io/hook-image-awaiter created
+deployment.apps/proxy created
+poddisruptionbudget.policy/proxy created
+service/proxy-api created
+service/proxy-public created
+poddisruptionbudget.policy/user-placeholder created
+statefulset.apps/user-placeholder created
+poddisruptionbudget.policy/user-scheduler created
+```
+
+Test's ...
+
+```bash
+kubectl --namespace=jhub get pods
+```
