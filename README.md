@@ -7,15 +7,20 @@ Jupiter notebooks
 $ mkdir charts manifests
 $ helm fetch --untar --untardir ./charts jupyterhub/jupyterhub
 $ cd charts
-$ helm template --set proxy.secretToken="b326bae33a6793ab57c5ca3677c540c4d53a4be193c7551adcb0778018e05d97" jupyterhub --output-dir ~/manifests
+$ helm template \
+    --name jub \
+    --namespace jhub \
+    --set proxy.secretToken="b326bae33a6793ab57c5ca3677c540c4d53a4be193c7551adcb0778018e05d97" \
+    jupyterhub \
+    --output-dir ~/manifests
 $ cd ..
-$ kubectl apply --recursive --filename ~/manifests/jupyterhub
 ```
 
 Applying the changes on noname-sms
 
 ```bash
-sms01-nmn:~/jsparks/manifests # kubectl apply --recursive --filename ${PWD}/jupyterhub
+kubectl create namespace jhub
+sms01-nmn:~/jsparks/manifests # kubectl apply --namespace jhub --recursive --filename ${PWD}/jupyterhub
 configmap/hub-config created
 deployment.apps/hub created
 poddisruptionbudget.policy/hub created
@@ -43,4 +48,10 @@ Test's ...
 
 ```bash
 kubectl --namespace=jhub get pods
+```
+
+Teardown
+
+```bash
+kubectl delete --namespace jhub --recursive --filename ${PWD}/jupyterhub
 ```
