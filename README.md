@@ -68,6 +68,20 @@ E.g.
 (base) 🐳 ~/workarea/notebooks/images$ docker save sms.local:5000/cray/configurable-http-proxy:3.0.0 | gzip > configurable-http-proxy:3.0.0.tgz
 ```
 
+```bash
+sms01-nmn:~/jsparks/images # ls
+configurable-http-proxy:3.0.0.tgz  k8s-hub:0.8.2.tgz  k8s-image-awaiter:0.8.2.tgz  k8s-network-tools:0.8.2.tgz
+
+sms01-nmn:~/jsparks/images # docker load < k8s-hub:0.8.2.tgz
+Loaded image: sms.local:5000/cray/jupyterhub/k8s-hub:0.8.2
+sms01-nmn:~/jsparks/images # docker load < k8s-image-awaiter:0.8.2.tgz
+Loaded image: sms.local:5000/cray/jupyterhub/k8s-image-awaiter:0.8.2
+sms01-nmn:~/jsparks/images # docker load < k8s-network-tools:0.8.2.tgz
+Loaded image: sms.local:5000/cray/jupyterhub/k8s-network-tools:0.8.2
+sms01-nmn:~/jsparks/images # docker load < configurable-http-proxy:3.0.0.tgz
+Loaded image: sms.local:5000/cray/configurable-http-proxy:3.0.0
+```
+
 Move to the sms node
 
 * docker load < shasta_myimage_latest.tar.gz
