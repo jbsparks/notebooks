@@ -20,8 +20,8 @@ $ cd ..
 Applying the changes on noname-sms
 
 ```bash
-kubectl create namespace jhub
-sms01-nmn:~/jsparks/manifests # kubectl apply --namespace jhub --recursive --filename ${PWD}/jupyterhub
+# kubectl create namespace jhub
+# kubectl apply --namespace jhub --recursive --filename ${PWD}/jupyterhub
 configmap/hub-config created
 deployment.apps/hub created
 poddisruptionbudget.policy/hub created
