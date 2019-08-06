@@ -55,10 +55,10 @@ The mechanism is usually follows this recipe.
 
 E.g.
 ```bash
-(base) 🐳 ~/workarea/notebooks/images$ docker tag jupyterhub/k8s-hub:0.8.2 sms.local:5000/cray/jupyterhub/k8s-hub:0.8.2
-(base) 🐳 ~/workarea/notebooks/images$ docker tag jupyterhub/k8s-image-awaiter:0.8.2 sms.local:5000/cray/jupyterhub/k8s-image-awaiter:0.8.2
-(base) 🐳 ~/workarea/notebooks/images$ docker tag jupyterhub/k8s-network-tools:0.8.2 sms.local:5000/cray/jupyterhub/k8s-network-tools:0.8.2
-(base) 🐳 ~/workarea/notebooks/images$ docker tag jupyterhub/configurable-http-proxy:3.0.0 sms.local:5000/cray/jupyterhub/configurable-http-proxy:3.0.0
+(base) 🐳 ~/workarea/notebooks/images$ docker tag jupyterhub/k8s-hub:0.8.2 sms.local:5000/cache/jupyterhub/k8s-hub:0.8.2
+(base) 🐳 ~/workarea/notebooks/images$ docker tag jupyterhub/k8s-image-awaiter:0.8.2 sms.local:5000/cache/jupyterhub/k8s-image-awaiter:0.8.2
+(base) 🐳 ~/workarea/notebooks/images$ docker tag jupyterhub/k8s-network-tools:0.8.2 sms.local:5000/cache/jupyterhub/k8s-network-tools:0.8.2
+(base) 🐳 ~/workarea/notebooks/images$ docker tag jupyterhub/configurable-http-proxy:3.0.0 sms.local:5000/cache/jupyterhub/configurable-http-proxy:3.0.0
 ```
 
 ```bash
