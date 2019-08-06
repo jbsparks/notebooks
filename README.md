@@ -62,10 +62,10 @@ docker tag jupyterhub/configurable-http-proxy:3.0.0 sms.local:5000/cache/jupyter
 ```
 
 ```bash
-docker save sms.local:5000/cache/jupyterhub/k8s-hub:0.8.2 | gzip > k8s-hub:0.8.2.tgz
-docker save sms.local:5000/cache/jupyterhub/k8s-image-awaiter:0.8.2 | gzip > k8s-image-awaiter:0.8.2.tgz
-docker save sms.local:5000/cache/jupyterhub/k8s-network-tools:0.8.2 | gzip > k8s-network-tools:0.8.2.tgz
-docker save sms.local:5000/cache/jupyterhub/configurable-http-proxy:3.0.0 | gzip > configurable-http-proxy:3.0.0.tgz
+docker save sms.local:5000/cache/jupyterhub/k8s-hub:0.8.2 | gzip > k8s-hub_0.8.2.tgz
+docker save sms.local:5000/cache/jupyterhub/k8s-image-awaiter:0.8.2 | gzip > k8s-image-awaiter_0.8.2.tgz
+docker save sms.local:5000/cache/jupyterhub/k8s-network-tools:0.8.2 | gzip > k8s-network-tools_0.8.2.tgz
+docker save sms.local:5000/cache/jupyterhub/configurable-http-proxy:3.0.0 | gzip > configurable-http-proxy_3.0.0.tgz
 ```
 
 ```bash
