@@ -45,6 +45,19 @@ statefulset.apps/user-placeholder created
 poddisruptionbudget.policy/user-scheduler created
 ```
 
+__Note__: The opensource deployment model assumes pods can pull images from external locations. Not so for Shasta. We need to modify the image specification in the pod spec's to use the internal Shasta docker registery ... 
+
+The mechanism is usually follows this recipe.
+
+* docker pull myimage:latest
+* docker tag myimage:latest sms.local:5000/cray/myimage:latest
+* docker save sms.local:5000/cray/myimage:latest | gzip > shasta_myimage_latest.tar.gz
+
+Move to the sms node
+
+* docker load < shasta_myimage_latest.tar.gz
+
+
 Test's ...
 
 ```bash
