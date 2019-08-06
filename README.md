@@ -2,6 +2,7 @@
 Jupiter notebooks
 
 ## Convert helm/tiller to kubectl
+__See__: https://blog.giantswarm.io/what-you-yaml-is-what-you-get for more details
 
 ```bash
 $ mkdir charts manifests
