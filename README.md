@@ -69,11 +69,16 @@ docker save sms.local:5000/cache/jupyterhub/configurable-http-proxy:3.0.0 | gzip
 ```
 
 ```bash
-for f in `ls *.tgz`; do docker load < $f;done
+for f in `ls *.tgz`; do docker load < $f; done
  Loaded image: sms.local:5000/cache/jupyterhub/configurable-http-proxy:3.0.0
  Loaded image: sms.local:5000/cache/jupyterhub/k8s-hub:0.8.2
  Loaded image: sms.local:5000/cache/jupyterhub/k8s-image-awaiter:0.8.2
  Loaded image: sms.local:5000/cache/jupyterhub/k8s-network-tools:0.8.2
+ 
+docker push sms.local:5000/cache/jupyterhub/configurable-http-proxy:3.0.0
+docker push sms.local:5000/cache/jupyterhub/k8s-hub:0.8.2
+docker push sms.local:5000/cache/jupyterhub/k8s-image-awaiter:0.8.2
+docker push sms.local:5000/cache/jupyterhub/k8s-network-tools:0.8.2
 ```
 
 Move to the sms node
