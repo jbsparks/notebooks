@@ -53,8 +53,9 @@ The mechanism is usually follows this recipe.
 * docker tag myimage:latest sms.local:5000/cray/myimage:latest
 * docker save sms.local:5000/cray/myimage:latest | gzip > shasta_myimage_latest.tar.gz
 
-E.g.
+E.g. On my laptop
 ```bash
+docker tag jsparkscraycom/hadrian-jupyter:latest sms.local:5000/cache/jupyterhub/hadrian-jupyter:latest
 docker tag jupyterhub/k8s-hub:0.8.2 sms.local:5000/cache/jupyterhub/k8s-hub:0.8.2
 docker tag jupyterhub/k8s-image-awaiter:0.8.2 sms.local:5000/cache/jupyterhub/k8s-image-awaiter:0.8.2
 docker tag jupyterhub/k8s-network-tools:0.8.2 sms.local:5000/cache/jupyterhub/k8s-network-tools:0.8.2
@@ -62,6 +63,7 @@ docker tag jupyterhub/configurable-http-proxy:3.0.0 sms.local:5000/cache/jupyter
 ```
 
 ```bash
+docker save sms.local:5000/cache/jupyterhub/hadrian-jupyter:latest | gzip > hadrian-jupyter.tgz
 docker save sms.local:5000/cache/jupyterhub/k8s-hub:0.8.2 | gzip > k8s-hub_0.8.2.tgz
 docker save sms.local:5000/cache/jupyterhub/k8s-image-awaiter:0.8.2 | gzip > k8s-image-awaiter_0.8.2.tgz
 docker save sms.local:5000/cache/jupyterhub/k8s-network-tools:0.8.2 | gzip > k8s-network-tools_0.8.2.tgz
@@ -69,6 +71,14 @@ docker save sms.local:5000/cache/jupyterhub/configurable-http-proxy:3.0.0 | gzip
 ```
 
 ```bash
+ls -lh
+total 2.7G
+-rw-r--r-- 1 root root  19M Aug  6 06:22 configurable-http-proxy_3.0.0.tgz
+-rw-r--r-- 1 root root 2.5G Aug  6 06:26 hadrian-jupyter.tgz
+-rw-r--r-- 1 root root 218M Aug  6 06:27 k8s-hub_0.8.2.tgz
+-rw-r--r-- 1 root root 1.6M Aug  6 06:27 k8s-image-awaiter_0.8.2.tgz
+-rw-r--r-- 1 root root 2.3M Aug  6 06:27 k8s-network-tools_0.8.2.tgz
+
 for f in `ls *.tgz`; do docker load < $f; done
  Loaded image: sms.local:5000/cache/jupyterhub/configurable-http-proxy:3.0.0
  Loaded image: sms.local:5000/cache/jupyterhub/k8s-hub:0.8.2
@@ -79,6 +89,7 @@ docker push sms.local:5000/cache/jupyterhub/configurable-http-proxy:3.0.0
 docker push sms.local:5000/cache/jupyterhub/k8s-hub:0.8.2
 docker push sms.local:5000/cache/jupyterhub/k8s-image-awaiter:0.8.2
 docker push sms.local:5000/cache/jupyterhub/k8s-network-tools:0.8.2
+docker push sms.local:5000/cache/jupyterhub/hadrian-jupyter:latest
 ```
 
 Move to the sms node
