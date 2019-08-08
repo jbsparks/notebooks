@@ -8,6 +8,14 @@ These pamphlets represent administrative functions of the Shasta Systems.
 
 ## Pamphlets
 
-1. Customize an Image Root to install Singularity
-1. Modify Compute Image to Install Kubernetes image
-
+<ol>
+  <li>Administration</li>
+  <ol>
+    <li>Customize an Image Root to install Singularity</li>
+    <li>Modify Compute Image to Install Kubernetes image</li>
+  </ol>
+  <li>Monitoring</li>
+  <ol>
+    <li>Elastic log search</li> 
+  </ol>
+</ol>
