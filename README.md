@@ -17,7 +17,7 @@ $ helm template \
 $ cd ..
 ```
 
-Applying the changes on noname-sms
+## Applying the changes on noname-sms
 
 ```bash
 # kubectl create namespace jhub
@@ -174,7 +174,16 @@ Events:
 
 To use JupyterHub, enter the external IP for the proxy-public service in to a browser. JupyterHub is running with a default dummy authenticator so entering any username and password combination will let you enter the hub.
 
-Teardown
+## Session
+
+On a __real__ Shasta system, we need to use ip addresses, cuz DNS isn't working and for github, turn off SSL verification.
+
+```bash
+export GIT_SSL_NO_VERIFY=true
+git clone http://140.82.113.3/jbsparks/notebooks.git
+```
+
+# Teardown
 
 ```bash
 kubectl delete --namespace jhub --recursive --filename ${PWD}/jupyterhub
