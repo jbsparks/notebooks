@@ -187,4 +187,5 @@ git clone http://140.82.113.3/jbsparks/notebooks.git
 
 ```bash
 kubectl delete --namespace jhub --recursive --filename ${PWD}/jupyterhub
+kubectl delete namespace jhub
 ```
