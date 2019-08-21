@@ -185,6 +185,12 @@ export GIT_SSL_NO_VERIFY=true
 git clone http://140.82.113.3/jbsparks/notebooks.git
 ```
 
+Move external to insternal
+
+```bash
+git clone https://jsparks@stash.us.cray.com/scm/shastacov/shasta_pamphlets.git
+```
+
 # Teardown
 
 ```bash
