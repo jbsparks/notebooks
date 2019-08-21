@@ -107,10 +107,6 @@ docker push sms.local:5000/cache/jupyterhub/k8s-network-tools:0.8.2
 docker push sms.local:5000/cache/jupyterhub/hadrian-jupyter:latest
 ```
 
-E.g. create the namespace
-```bash
-kubectl create namespace jhub
-```
 E.g. create the servies, assume we are in manifest directory....
 ```
 kubectl create namespace jhub
