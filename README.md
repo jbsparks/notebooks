@@ -206,3 +206,10 @@ lifecycleHooks:
            exec:
              command: ["git", "clone", "--depth", "1", "https://jbsparks@140.82.113.3/jbsparks/notebooks","Shasta/pamphlets"]
 ```
+ 
+```yml
+     lifecycleHooks:
+        postStart:
+          exec:
+            command: ["git","clone","https://jsparks@172.30.88.185/scm/shastacov/shasta_pamphlets.git"]
+```
