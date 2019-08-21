@@ -191,3 +191,12 @@ git clone http://140.82.113.3/jbsparks/notebooks.git
 kubectl delete --namespace jhub --recursive --filename ${PWD}/manifest
 kubectl delete namespace jhub
 ```
+
+# Configs Tried and Failed
+
+```yml
+lifecycleHooks:
+        postStart:
+           exec:
+             command: ["git", "clone", "--depth", "1", "https://jbsparks@140.82.113.3/jbsparks/notebooks","Shasta/pamphlets"]
+```
