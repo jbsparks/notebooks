@@ -107,7 +107,7 @@ docker push sms.local:5000/cache/jupyterhub/k8s-network-tools:0.8.2
 docker push sms.local:5000/cache/jupyterhub/hadrian-jupyter:latest
 ```
 
-E.g. create the servies, assume we are in manifest directory....
+E.g. create the servies, assume we are in notebook directory....
 ```
 kubectl create namespace jhub
 kubectl apply --namespace jhub --recursive --filename ${PWD}/manifest
@@ -116,7 +116,7 @@ kubectl get service --namespace jhub
 kubectl describe service proxy-public --namespace jhub
 IP=$(ip a|grep em2|grep inet|awk '{print $2}'|cut -d"/" -f1)
 PORT=$(kubectl get service --namespace jhub | grep "80:"|awk '{print $5}'|cut -d"/" -f1|cut -d":" -f2)
-echo "http:${IP}:${PORT}"
+echo "Web Browser @ http:${IP}:${PORT}"
 ```
 
 Test's ...
