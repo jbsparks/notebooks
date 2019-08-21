@@ -111,10 +111,16 @@ E.g. create the namespace
 ```bash
 kubectl create namespace jhub
 ```
-E.g. create the servies
+E.g. create the servies, assume we are in manifest directory....
 ```
-cd ../manifest
-kubectl apply --namespace jhub --recursive --filename ${PWD}/jupyterhub
+kubectl create namespace jhub
+kubectl apply --namespace jhub --recursive --filename ${PWD}/manifest
+kubectl --namespace=jhub get pods
+kubectl get service --namespace jhub
+kubectl describe service proxy-public --namespace jhub
+IP=$(ip a|grep em2|grep inet|awk '{print $2}'|cut -d"/" -f1)
+PORT=$(kubectl get service --namespace jhub | grep "80:"|awk '{print $5}'|cut -d"/" -f1|cut -d":" -f2)
+echo "http:${IP}:${PORT}"
 ```
 
 Test's ...
@@ -186,6 +192,6 @@ git clone http://140.82.113.3/jbsparks/notebooks.git
 # Teardown
 
 ```bash
-kubectl delete --namespace jhub --recursive --filename ${PWD}/jupyterhub
+kubectl delete --namespace jhub --recursive --filename ${PWD}/manifest
 kubectl delete namespace jhub
 ```
