@@ -22,7 +22,7 @@ $ cd ..
 | Image   | Version  | Description |
 | :---    | :---     | :---        |
 | jupyterhub/k8s-singleuser-sample:0.9-b51ffeb | 0.9-b51ffe | User jupyther image |
-| jupyterhub/k8s-network-tools:0.9-b51ffeb |  0.9-b51ffe | jub ? |
+| jupyterhub/k8s-network-tools:0.9-b51ffeb |  0.9-b51ffe | jhub ? |
 | gcr.io/google_containers/pause:3.0 | 3.0 | k8s pause |
 | jupyterhub/k8s-image-awaiter:0.9-b51ffeb |  0.9-b51ffe | image puller |
 | jupyterhub/configurable-http-proxy:4.1.0 |  0.9-b51ffe | jhub proxy |
